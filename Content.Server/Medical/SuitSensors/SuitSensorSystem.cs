@@ -6,7 +6,6 @@ using Content.Server.Emp;
 using Content.Server.GameTicking;
 using Content.Server.Medical.CrewMonitoring;
 using Content.Server.Popups;
-using Content.Server.Station.Systems;
 using Content.Shared.Damage;
 using Content.Shared.Emp;
 using Content.Shared.Examine;
@@ -32,12 +31,10 @@ public sealed class SuitSensorSystem : EntitySystem
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly StationSystem _stationSystem = default!;
 
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawn);
         SubscribeLocalEvent<SuitSensorComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<SuitSensorComponent, EntityUnpausedEvent>(OnUnpaused);
         SubscribeLocalEvent<SuitSensorComponent, GotEquippedEvent>(OnEquipped);
@@ -60,18 +57,15 @@ public sealed class SuitSensorSystem : EntitySystem
         base.Update(frameTime);
 
         var curTime = _gameTiming.CurTime;
-        var sensors = EntityManager.EntityQueryEnumerator<SuitSensorComponent, DeviceNetworkComponent>();
+        var sensors = EntityQueryEnumerator<SuitSensorComponent, DeviceNetworkComponent, TransformComponent>();
 
-        while (sensors.MoveNext(out var uid, out var sensor, out var device))
+        while (sensors.MoveNext(out var uid, out var sensor, out var device, out var xform))
         {
             if (device.TransmitFrequency is null)
                 continue;
 
             // check if sensor is ready to update
             if (curTime < sensor.NextUpdate)
-                continue;
-
-            if (!CheckSensorAssignedStation(uid, sensor))
                 continue;
 
             // TODO: This would cause imprecision at different tick rates.
@@ -85,7 +79,7 @@ public sealed class SuitSensorSystem : EntitySystem
             //Retrieve active server address if the sensor isn't connected to a server
             if (sensor.ConnectedServer == null)
             {
-                if (!_monitoringServerSystem.TryGetActiveServerAddress(sensor.StationId!.Value, out var address))
+                if (!_monitoringServerSystem.TryGetActiveServerAddress(xform.MapID, out var address))
                     continue;
 
                 sensor.ConnectedServer = address;
@@ -105,51 +99,8 @@ public sealed class SuitSensorSystem : EntitySystem
         }
     }
 
-    /// <summary>
-    /// Checks whether the sensor is assigned to a station or not
-    /// and tries to assign an unassigned sensor to a station if it's currently on a grid
-    /// </summary>
-    /// <returns>True if the sensor is assigned to a station or assigning it was successful. False otherwise.</returns>
-    private bool CheckSensorAssignedStation(EntityUid uid, SuitSensorComponent sensor)
-    {
-        if (!sensor.StationId.HasValue && Transform(uid).GridUid == null)
-            return false;
-
-        sensor.StationId = _stationSystem.GetOwningStation(uid);
-        return sensor.StationId.HasValue;
-    }
-
-    private void OnPlayerSpawn(PlayerSpawnCompleteEvent ev)
-    {
-        // If the player spawns in arrivals then the grid underneath them may not be appropriate.
-        // in which case we'll just use the station spawn code told us they are attached to and set all of their
-        // sensors.
-        var sensorQuery = GetEntityQuery<SuitSensorComponent>();
-        var xformQuery = GetEntityQuery<TransformComponent>();
-        RecursiveSensor(ev.Mob, ev.Station, sensorQuery, xformQuery);
-    }
-
-    private void RecursiveSensor(EntityUid uid, EntityUid stationUid, EntityQuery<SuitSensorComponent> sensorQuery, EntityQuery<TransformComponent> xformQuery)
-    {
-        var xform = xformQuery.GetComponent(uid);
-        var enumerator = xform.ChildEnumerator;
-
-        while (enumerator.MoveNext(out var child))
-        {
-            if (sensorQuery.TryGetComponent(child, out var sensor))
-            {
-                sensor.StationId = stationUid;
-            }
-
-            RecursiveSensor(child, stationUid, sensorQuery, xformQuery);
-        }
-    }
-
     private void OnMapInit(EntityUid uid, SuitSensorComponent component, MapInitEvent args)
     {
-        // Fallback
-        component.StationId ??= _stationSystem.GetOwningStation(uid);
-
         // generate random mode
         if (component.RandomMode)
         {
