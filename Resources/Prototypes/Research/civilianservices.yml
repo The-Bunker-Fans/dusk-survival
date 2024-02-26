@@ -154,6 +154,18 @@
   - MegaSprayBottle
 
 - type: technology
+  id: AdvancedTailoring
+  name: research-technology-advanced-tailoring
+  icon:
+    sprite: Structures/Machines/uniform_printer_advanced.rsi
+    state: icon
+  discipline: CivilianServices
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - AdvancedUniformPrinterMachineCircuitboard
+
+- type: technology
   id: HONKMech
   name: research-technology-honk-mech
   icon:

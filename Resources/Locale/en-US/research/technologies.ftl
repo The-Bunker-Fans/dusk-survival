@@ -63,6 +63,7 @@ research-technology-biochemical-stasis = Biochemical Stasis
 research-technology-mechanized-treatment = Mechanized Treatment
 research-technology-robotic-cleanliness = Robotic Cleanliness
 research-technology-advanced-cleaning = Advanced Cleaning
+research-technology-advanced-tailoring = Advanced Tailoring
 research-technology-meat-manipulation = Meat Manipulation
 research-technology-honk-mech = H.O.N.K. Mech
 research-technology-advanced-spray = Advanced Spray

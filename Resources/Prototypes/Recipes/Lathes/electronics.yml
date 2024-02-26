@@ -262,6 +262,15 @@
     Gold: 100
 
 - type: latheRecipe
+  id: AdvancedUniformPrinterMachineCircuitboard
+  result: AdvancedUniformPrinterMachineCircuitboard
+  completetime: 4
+  materials:
+    Steel: 100
+    Glass: 900
+    Gold: 100
+
+- type: latheRecipe
   id: CircuitImprinterMachineCircuitboard
   result: CircuitImprinterMachineCircuitboard
   category: Circuitry
