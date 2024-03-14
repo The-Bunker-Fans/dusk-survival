@@ -13,6 +13,8 @@ ghost-role-information-mothroach-description = A cute but mischievous mothroach.
 ghost-role-information-giant-spider-name = Giant spider
 ghost-role-information-giant-spider-description = This station's inhabitants look mighty tasty, and your sticky web is perfect to catch them!
 
+ghost-role-information-cognislime-description = Made conscious with the magic of cognislime.
+
 ghost-role-information-cognizine-description = Made conscious with the magic of cognizine.
 
 ghost-role-information-hamster-name = Hamster
