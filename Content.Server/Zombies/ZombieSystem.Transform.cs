@@ -18,6 +18,7 @@ using Content.Server.Temperature.Components;
 using Content.Shared.CombatMode;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage;
+using Content.Shared.Devour.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Humanoid;
@@ -57,7 +58,6 @@ namespace Content.Server.Zombies
         [Dependency] private readonly IChatManager _chatMan = default!;
         [Dependency] private readonly MindSystem _mind = default!;
         [Dependency] private readonly SharedRoleSystem _roles = default!;
-        [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
         [Dependency] private readonly SharedAudioSystem _audio = default!;
 
         /// <summary>
@@ -116,7 +116,13 @@ namespace Content.Server.Zombies
             //This is needed for stupid entities that fuck up combat mode component
             //in an attempt to make an entity not attack. This is the easiest way to do it.
             var combat = EnsureComp<CombatModeComponent>(target);
-            RemComp<PacifiedComponent>(target);
+
+            //Only remove the pacified component if the target hasn't been devoured.
+            //This is to prevent entities that turn into a zombie while devoured
+            //from attacking the entity that devoured them from the inside.
+            if(!HasComp<DevouredComponent>(target))
+                RemComp<PacifiedComponent>(target);
+
             _combat.SetCanDisarm(target, false, combat);
             _combat.SetInCombatMode(target, true, combat);
 

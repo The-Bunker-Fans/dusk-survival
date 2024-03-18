@@ -4,7 +4,6 @@ using Content.Shared.DoAfter;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Serialization;
@@ -13,7 +12,7 @@ namespace Content.Shared.Devour;
 
 public abstract class SharedDevourSystem : EntitySystem
 {
-    [Dependency] protected readonly SharedAudioSystem _audioSystem = default!;
+    [Dependency] protected readonly SharedAudioSystem AudioSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
@@ -72,7 +71,7 @@ public abstract class SharedDevourSystem : EntitySystem
         _popupSystem.PopupClient(Loc.GetString("devour-action-popup-message-structure"), uid, uid);
 
         if (component.SoundStructureDevour != null)
-            _audioSystem.PlayPredicted(component.SoundStructureDevour, uid, uid, component.SoundStructureDevour.Params);
+            AudioSystem.PlayPredicted(component.SoundStructureDevour, uid, uid, component.SoundStructureDevour.Params);
 
         _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, uid, component.StructureDevourTime, new DevourDoAfterEvent(), uid, target: target, used: uid)
         {
@@ -86,6 +85,12 @@ public sealed partial class DevourActionEvent : EntityTargetActionEvent { }
 
 [Serializable, NetSerializable]
 public sealed partial class DevourDoAfterEvent : SimpleDoAfterEvent { }
+
+/// <summary>
+/// Raised after an entity is devoured.
+/// </summary>
+[ByRefEvent]
+public record struct DevouredEvent(EntityUid Devourer);
 
 [Serializable, NetSerializable]
 public enum FoodPreference : byte
