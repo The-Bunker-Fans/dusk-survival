@@ -2,6 +2,7 @@
   parent: ClothingBackpackSatchelSyndicate
   id: ClothingBackpackSatchelSyndicateOperative
   name: operative satchel
+  description: A robust, explosion-proof satchel for holding various nuclear operative goods.
   components:
   - type: StorageFill
     contents:
