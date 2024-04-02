@@ -72,11 +72,11 @@
   id: SyndicateOperativeGearExtremelyBasic
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
-    back: ClothingBackpackDuffelSyndicateOperative
+    back: ClothingBackpackSyndicateOperative
     shoes: ClothingShoesBootsCombatFilled
     gloves: ClothingHandsGlovesColorBlack
   innerClothingSkirt: ClothingUniformJumpsuitOperative
-  satchel: ClothingBackpackDuffelSyndicateOperative
+  satchel: ClothingBackpackSatchelSyndicateOperative
   duffelbag: ClothingBackpackDuffelSyndicateOperative
 
 #Syndicate Operative Outfit - Basic
@@ -84,14 +84,14 @@
   id: SyndicateOperativeGearBasic
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
-    back: ClothingBackpackDuffelSyndicateOperative
+    back: ClothingBackpackSyndicateOperative
     ears: ClothingHeadsetAltSyndicate
     gloves: ClothingHandsGlovesCombat
     shoes: ClothingShoesBootsCombatFilled
     pocket1: BaseUplinkRadio40TC
     id: SyndiPDA
   innerClothingSkirt: ClothingUniformJumpsuitOperative
-  satchel: ClothingBackpackDuffelSyndicateOperative
+  satchel: ClothingBackpackSatchelSyndicateOperative
   duffelbag: ClothingBackpackDuffelSyndicateOperative
 
 #Syndicate Operative Outfit - Full Kit
@@ -99,7 +99,7 @@
   id: SyndicateOperativeGearFull
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
-    back: ClothingBackpackDuffelSyndicateOperative
+    back: ClothingBackpackSyndicateOperative
     mask: ClothingMaskGasSyndicate
     eyes: ClothingEyesHudSyndicate
     ears: ClothingHeadsetAltSyndicate
@@ -111,7 +111,7 @@
     pocket2: BaseUplinkRadio40TC
     belt: ClothingBeltMilitaryWebbing
   innerClothingSkirt: ClothingUniformJumpskirtOperative
-  satchel: ClothingBackpackDuffelSyndicateOperative
+  satchel: ClothingBackpackSatchelSyndicateOperative
   duffelbag: ClothingBackpackDuffelSyndicateOperative
 
 #Nuclear Operative Commander Gear
@@ -119,7 +119,7 @@
   id: SyndicateCommanderGearFull
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
-    back: ClothingBackpackDuffelSyndicateOperative
+    back: ClothingBackpackSyndicateOperative
     mask: ClothingMaskGasSyndicate
     eyes: ClothingEyesHudSyndicate
     ears: ClothingHeadsetAltSyndicate
@@ -134,7 +134,7 @@
   inhand:
     - NukeOpsDeclarationOfWar
   innerClothingSkirt: ClothingUniformJumpskirtOperative
-  satchel: ClothingBackpackDuffelSyndicateOperative
+  satchel: ClothingBackpackSatchelSyndicateOperative
   duffelbag: ClothingBackpackDuffelSyndicateOperative
 
 #Nuclear Operative Medic Gear
@@ -142,7 +142,7 @@
   id: SyndicateOperativeMedicFull
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
-    back: ClothingBackpackDuffelSyndicateOperativeMedic
+    back: ClothingBackpackSyndicateOperativeMedic
     mask: ClothingMaskGasSyndicate
     eyes: ClothingEyesHudSyndicate
     ears: ClothingHeadsetAltSyndicate
@@ -154,7 +154,7 @@
     pocket2: BaseUplinkRadio40TC
     belt: ClothingBeltMilitaryWebbingMedFilled
   innerClothingSkirt: ClothingUniformJumpskirtOperative
-  satchel: ClothingBackpackDuffelSyndicateOperativeMedic
+  satchel: ClothingBackpackSatchelSyndicateOperativeMedic
   duffelbag: ClothingBackpackDuffelSyndicateOperativeMedic
 
 #Syndicate Lone Operative Outfit - Full Kit
