@@ -75,9 +75,6 @@
     back: ClothingBackpackSyndicateOperative
     shoes: ClothingShoesBootsCombatFilled
     gloves: ClothingHandsGlovesColorBlack
-  innerClothingSkirt: ClothingUniformJumpsuitOperative
-  satchel: ClothingBackpackSatchelSyndicateOperative
-  duffelbag: ClothingBackpackDuffelSyndicateOperative
 
 #Syndicate Operative Outfit - Basic
 - type: startingGear
@@ -90,9 +87,6 @@
     shoes: ClothingShoesBootsCombatFilled
     pocket1: BaseUplinkRadio40TC
     id: SyndiPDA
-  innerClothingSkirt: ClothingUniformJumpsuitOperative
-  satchel: ClothingBackpackSatchelSyndicateOperative
-  duffelbag: ClothingBackpackDuffelSyndicateOperative
 
 #Syndicate Operative Outfit - Full Kit
 - type: startingGear
@@ -110,9 +104,6 @@
     pocket1: DoubleEmergencyOxygenTankFilled
     pocket2: BaseUplinkRadio40TC
     belt: ClothingBeltMilitaryWebbing
-  innerClothingSkirt: ClothingUniformJumpskirtOperative
-  satchel: ClothingBackpackSatchelSyndicateOperative
-  duffelbag: ClothingBackpackDuffelSyndicateOperative
 
 #Nuclear Operative Commander Gear
 - type: startingGear
@@ -133,9 +124,6 @@
     belt: ClothingBeltMilitaryWebbing
   inhand:
     - NukeOpsDeclarationOfWar
-  innerClothingSkirt: ClothingUniformJumpskirtOperative
-  satchel: ClothingBackpackSatchelSyndicateOperative
-  duffelbag: ClothingBackpackDuffelSyndicateOperative
 
 #Nuclear Operative Medic Gear
 - type: startingGear
@@ -153,9 +141,6 @@
     pocket1: DoubleEmergencyOxygenTankFilled
     pocket2: BaseUplinkRadio40TC
     belt: ClothingBeltMilitaryWebbingMedFilled
-  innerClothingSkirt: ClothingUniformJumpskirtOperative
-  satchel: ClothingBackpackSatchelSyndicateOperativeMedic
-  duffelbag: ClothingBackpackDuffelSyndicateOperativeMedic
 
 #Syndicate Lone Operative Outfit - Full Kit
 - type: startingGear
@@ -173,9 +158,6 @@
     pocket1: DoubleEmergencyOxygenTankFilled
     pocket2: BaseUplinkRadio60TC
     belt: ClothingBeltMilitaryWebbing
-  innerClothingSkirt: ClothingUniformJumpskirtOperative
-  satchel: ClothingBackpackDuffelSyndicateOperative
-  duffelbag: ClothingBackpackDuffelSyndicateOperative
 
 # Syndicate Footsoldier Gear
 - type: startingGear
