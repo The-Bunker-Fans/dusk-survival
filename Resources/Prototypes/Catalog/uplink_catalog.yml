@@ -1324,7 +1324,17 @@
   description: uplink-backpack-syndicate-desc
   productEntity: ClothingBackpackSyndicate
   cost:
-    Telecrystal: 2
+    Telecrystal: 1
+  categories:
+    - UplinkWearables
+
+- type: listing
+  id: UplinkSatchelSyndicate
+  name: uplink-satchel-syndicate-name
+  description: uplink-satchel-syndicate-desc
+  productEntity: ClothingBackpackSatchelSyndicate
+  cost:
+    Telecrystal: 1
   categories:
     - UplinkWearables
 
