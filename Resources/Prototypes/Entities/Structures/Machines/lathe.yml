@@ -376,6 +376,7 @@
     - ElectricGrillMachineCircuitboard
     - BoozeDispenserMachineCircuitboard
     - SodaDispenserMachineCircuitboard
+    - ObjectSensorCircuitboard
     - SpaceHeaterMachineCircuitBoard
     dynamicRecipes:
       - ThermomachineFreezerMachineCircuitBoard

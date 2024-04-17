@@ -1360,6 +1360,19 @@
 
 - type: entity
   parent: BaseMachineCircuitboard
+  id: ObjectSensorCircuitboard
+  name: object sensor machine board
+  description: A machine printed circuit board for an object sensor
+  components:
+  - type: MachineBoard
+    prototype: ObjectSensor
+    requirements:
+      Manipulator: 2
+    materialRequirements:
+      Steel: 5
+      Glass: 5
+      
+- type: entity
   id: ReagentGrinderIndustrialMachineCircuitboard
   name: industrial reagent grinder machine board
   components:
