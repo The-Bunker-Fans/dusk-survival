@@ -208,6 +208,7 @@
     - ShoesRequiredStepTriggerImmune
     - DoorBumpOpener
     - CanPilot
+    - Unimplantable
   - type: Emoting
   - type: GuideHelp
     guides:
