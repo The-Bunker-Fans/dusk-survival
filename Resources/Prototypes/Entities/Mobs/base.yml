@@ -44,6 +44,39 @@
   - type: Polymorphable
   - type: StatusIcon
 
+- type: entity
+  save: false
+  id: MobPain
+  abstract: true
+  components:
+  - type: NervousSystem
+
+- type: entity
+  save: false
+  id: MobConsciousness
+  abstract: true
+  components:
+  - type: Consciousness
+    threshold: 30
+
+- type: entity
+  save: false
+  id: MobDamageThresholds
+  abstract: true
+  components:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      200: Dead
+
+- type: entity
+  save: false
+  id: MobWoundable
+  abstract: true
+  components:
+  - type: MedicalData #TODO: move this to it's own prototype category
+
 # Used for mobs that have health and can take damage.
 - type: entity
   save: false
@@ -78,11 +111,6 @@
   - type: RadiationReceiver
   - type: Stamina
   - type: MobState
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      100: Critical
-      200: Dead
   - type: MobStateActions
     actions:
       Critical:
@@ -204,13 +232,14 @@
   abstract: true
   components:
   - type: Internals
-  - type: Respirator
-    damage:
-      types:
-        Asphyxiation: 2
-    damageRecovery:
-      types:
-        Asphyxiation: -1.0
+#TODO respiration: reimplement this
+#  - type: Respirator
+#    damage:
+#      types:
+#        Asphyxiation: 2
+#    damageRecovery:
+#      types:
+#        Asphyxiation: -1.0
 
 # Used for mobs that have a bloodstream
 - type: entity
@@ -219,12 +248,37 @@
   abstract: true
   components:
   - type: SolutionContainerManager
+    solutions:
+      bloodstream:
+        maxVol: 250
+      bloodSpill:
+        maxVol: 250
   - type: InjectableSolution
-    solution: chemicals
+    solution: bloodstream
   - type: Bloodstream
-    bloodlossDamage:
-      types:
-        Bloodloss: 0.5
-    bloodlossHealDamage:
-      types:
-        Bloodloss: -1
+    bloodDefinition: HumanBlood
+    #TODO Bloodstream: re-implement this
+#    bloodlossDamage:
+#      types:
+#        Bloodloss: 0.5
+#    bloodlossHealDamage:
+#      types:
+#        Bloodloss: -1
+
+# Used for mobs that have a simplified bloodstream
+# this does not track blood types or have logic for pulse/pressure
+# use this for mobs that do not use body system or do not use advanced body/organ simulation
+- type: entity
+  save: false
+  id: MobSimplifiedBloodstream
+  abstract: true
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      bloodstream:
+        maxVol: 250
+      bloodSpill:
+        maxVol: 250
+  - type: InjectableSolution
+    solution: bloodstream
+  - type: Bloodstream
