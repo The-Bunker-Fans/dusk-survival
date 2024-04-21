@@ -103,40 +103,48 @@
         ]
       ]
     },
-	{
-	  "name": "closed_unlit",
-	  "directions": 4
-	},
-	{
-	  "name": "deny_unlit",
-	  "directions": 4,
-	  "delays":[
-	    [
-		  0.1, 0.2, 0.1
-		],
-		[
-		  0.1, 0.2, 0.1
-		],
-		[
-		  0.1, 0.2, 0.1
-		],
-		[
-		  0.1, 0.2, 0.1
-		]
-	  ]
-	},
-	{
-	  "name": "welded",
-	  "directions": 4
-	},
-	{
-	  "name": "bolted_unlit",
-	  "directions": 4
-	},
-	{
-	  "name": "emergency_unlit",
-	  "directions": 4
-	},
+    {
+      "name": "closed_unlit",
+      "directions": 4
+    },
+    {
+      "name": "deny_unlit",
+      "directions": 4,
+      "delays": [
+        [
+          0.1,
+          0.2,
+          0.1
+        ],
+        [
+          0.1,
+          0.2,
+          0.1
+        ],
+        [
+          0.1,
+          0.2,
+          0.1
+        ],
+        [
+          0.1,
+          0.2,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "welded",
+      "directions": 4
+    },
+    {
+      "name": "bolted_unlit",
+      "directions": 4
+    },
+    {
+      "name": "emergency_unlit",
+      "directions": 4
+    },
     {
       "name": "open",
       "directions": 4
@@ -145,7 +153,7 @@
       "name": "open_unlit",
       "directions": 4
     },
-	{
+    {
       "name": "panel_open",
       "directions": 4
     },

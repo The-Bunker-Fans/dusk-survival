@@ -37,7 +37,7 @@
         ]
       ]
     },
-	{
+    {
       "name": "midwife",
       "directions": 4
     },
@@ -70,7 +70,7 @@
     {
       "name": "viper",
       "directions": 4
-	},
+    },
     {
       "name": "viper-moving",
       "directions": 4,
@@ -100,7 +100,7 @@
     {
       "name": "tarantula",
       "directions": 4
-	},
+    },
     {
       "name": "tarantula-moving",
       "directions": 4,
@@ -127,7 +127,7 @@
         ]
       ]
     },
-	{
+    {
       "name": "nurse",
       "directions": 4
     },
@@ -160,7 +160,7 @@
     {
       "name": "guard",
       "directions": 4
-	},
+    },
     {
       "name": "guard-moving",
       "directions": 4,

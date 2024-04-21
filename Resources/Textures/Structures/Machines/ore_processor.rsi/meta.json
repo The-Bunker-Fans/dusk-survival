@@ -22,7 +22,7 @@
         ]
       ]
     },
-	{
+    {
       "name": "building",
       "delays": [
         [
@@ -37,14 +37,14 @@
         ]
       ]
     },
-	{
-	  "name": "icon"
-	},
-	{
+    {
+      "name": "icon"
+    },
+    {
       "name": "panel"
     },
-	{
-	  "name": "unlit"
-	}
+    {
+      "name": "unlit"
+    }
   ]
 }

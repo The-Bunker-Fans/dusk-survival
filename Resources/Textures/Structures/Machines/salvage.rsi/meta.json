@@ -46,10 +46,22 @@
       "name": "salvage-magnet-ready-blinking",
       "directions": 4,
       "delays": [
-        [ 0.2, 0.2],
-        [ 0.2, 0.2],
-        [ 0.2, 0.2],
-        [ 0.2, 0.2]
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ]
       ],
       "commentary": "Attaching state"
     },
@@ -57,13 +69,24 @@
       "name": "salvage-magnet-unready-blinking",
       "directions": 4,
       "delays": [
-        [ 0.2, 0.2],
-        [ 0.2, 0.2],
-        [ 0.2, 0.2],
-        [ 0.2, 0.2]
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ]
       ],
       "commentary": "Detaching state"
     }
   ]
 }
-

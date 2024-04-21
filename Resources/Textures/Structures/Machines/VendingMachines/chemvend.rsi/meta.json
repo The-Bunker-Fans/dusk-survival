@@ -11,13 +11,13 @@
       "name": "broken"
     },
     {
-        "name": "deny",
-        "delays": [
-          [
-            0.1,
-            0.1
-          ]
+      "name": "deny",
+      "delays": [
+        [
+          0.1,
+          0.1
         ]
+      ]
     },
     {
       "name": "normal",
@@ -32,7 +32,7 @@
       "name": "off"
     },
     {
-     "name": "panel"
+      "name": "panel"
     }
   ]
 }

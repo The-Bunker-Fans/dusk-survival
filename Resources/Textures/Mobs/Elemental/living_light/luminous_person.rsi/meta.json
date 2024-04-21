@@ -9,12 +9,12 @@
   "states": [
     {
       "name": "glow",
-	  "directions": 4
+      "directions": 4
     },
-	{
+    {
       "name": "dead_glow"
     },
-	{
+    {
       "name": "dead"
     },
     {

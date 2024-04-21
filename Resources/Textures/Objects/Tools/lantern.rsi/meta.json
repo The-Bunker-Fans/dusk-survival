@@ -35,13 +35,13 @@
       "name": "on-inhand-right",
       "directions": 4
     },
-	{
-	  "name": "on-equipped-BELT",
-	  "directions": 4
-	},
-	{
-	  "name": "off-equipped-BELT",
-	  "directions": 4
-	}
+    {
+      "name": "on-equipped-BELT",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-BELT",
+      "directions": 4
+    }
   ]
 }

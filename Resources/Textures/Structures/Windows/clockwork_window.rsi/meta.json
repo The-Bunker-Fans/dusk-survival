@@ -8,39 +8,39 @@
   },
   "states": [
     {
-	  "name": "full"
-	},
+      "name": "full"
+    },
     {
       "name": "cwindow0",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "cwindow1",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "cwindow2",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "cwindow3",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "cwindow4",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "cwindow5",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "cwindow6",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "cwindow7",
-	  "directions": 4
+      "directions": 4
     }
   ]
 }

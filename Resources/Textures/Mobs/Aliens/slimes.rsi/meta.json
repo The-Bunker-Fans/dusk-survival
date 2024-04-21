@@ -39,15 +39,15 @@
           0.3
         ]
       ]
-	},
-	{
+    },
+    {
       "name": "yellow_adult_slime_dead"
     },
-	{
+    {
       "name": "aslime-_3",
       "directions": 4
     },
-	{
+    {
       "name": "rainbow_slime_extract",
       "delays": [
         [
@@ -66,7 +66,7 @@
         ]
       ]
     },
-	{
+    {
       "name": "rainbow_baby_slime",
       "delays": [
         [

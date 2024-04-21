@@ -235,7 +235,7 @@
       "name": "service_l",
       "directions": 4
     },
-	{
+    {
       "name": "synd_sec",
       "directions": 4
     },
@@ -247,7 +247,7 @@
       "name": "synd_sec_l",
       "directions": 4
     },
-	{
+    {
       "name": "synd_medical",
       "directions": 4
     },
@@ -304,10 +304,10 @@
       ]
     },
     {
-          "name": "synd_engi",
-          "directions": 4
+      "name": "synd_engi",
+      "directions": 4
     },
-	{
+    {
       "name": "synd_engi_e",
       "directions": 4
     },
@@ -315,6 +315,5 @@
       "name": "synd_engi_l",
       "directions": 4
     }
-
   ]
 }

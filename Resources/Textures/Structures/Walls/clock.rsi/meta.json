@@ -8,42 +8,42 @@
   },
   "states": [
     {
-	  "name": "wall_gear"
-	},
+      "name": "wall_gear"
+    },
     {
       "name": "clock0",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "clock1",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "clock2",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "clock3",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "clock4",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "clock5",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "clock6",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "clock7",
-	  "directions": 4
+      "directions": 4
     },
-	{
-	  "name": "full"
-	}
+    {
+      "name": "full"
+    }
   ]
 }

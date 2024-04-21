@@ -25,11 +25,11 @@
     },
     {
       "name": "ano01-inhand-left",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "ano01-inhand-right",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "ano02"
@@ -49,11 +49,11 @@
     },
     {
       "name": "ano02-inhand-left",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "ano02-inhand-right",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "ano03"
@@ -73,11 +73,11 @@
     },
     {
       "name": "ano03-inhand-left",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "ano03-inhand-right",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "ano04"
@@ -97,11 +97,11 @@
     },
     {
       "name": "ano04-inhand-left",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "ano04-inhand-right",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "ano05"
@@ -121,11 +121,11 @@
     },
     {
       "name": "ano05-inhand-left",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "ano05-inhand-right",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "ano06"
@@ -145,11 +145,11 @@
     },
     {
       "name": "ano06-inhand-left",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "ano06-inhand-right",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "ano07"
@@ -169,11 +169,11 @@
     },
     {
       "name": "ano07-inhand-left",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "ano07-inhand-right",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "ano08"
@@ -193,11 +193,11 @@
     },
     {
       "name": "ano08-inhand-left",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "ano08-inhand-right",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "ano09"
@@ -217,11 +217,11 @@
     },
     {
       "name": "ano09-inhand-left",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "ano09-inhand-right",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "ano10"
@@ -241,11 +241,11 @@
     },
     {
       "name": "ano10-inhand-left",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "ano10-inhand-right",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "ano11"
@@ -265,11 +265,11 @@
     },
     {
       "name": "ano11-inhand-left",
-	  "directions": 4
+      "directions": 4
     },
     {
       "name": "ano11-inhand-right",
-	  "directions": 4
+      "directions": 4
     }
   ]
 }

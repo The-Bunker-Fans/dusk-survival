@@ -52,7 +52,7 @@
         ]
       ]
     },
-	{
+    {
       "name": "staff-inhand-left",
       "directions": 4,
       "delays": [
@@ -204,7 +204,7 @@
         ]
       ]
     },
-	{
+    {
       "name": "staff-inhand-right",
       "directions": 4,
       "delays": [
@@ -356,7 +356,7 @@
         ]
       ]
     },
-	{
+    {
       "name": "change",
       "delays": [
         [
@@ -390,7 +390,7 @@
         ]
       ]
     },
-	{
+    {
       "name": "change-inhand-left",
       "directions": 4,
       "delays": [
@@ -454,7 +454,7 @@
         ]
       ]
     },
-	{
+    {
       "name": "change-inhand-right",
       "directions": 4,
       "delays": [

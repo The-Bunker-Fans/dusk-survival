@@ -7,40 +7,40 @@
     "y": 32
   },
   "states": [
-	  {
+    {
       "name": "full"
-    }, 
-	  {
+    },
+    {
       "name": "necropolis0",
-	    "directions": 4
+      "directions": 4
     },
-	  {
+    {
       "name": "necropolis1",
-	    "directions": 4
+      "directions": 4
     },
-	  {
+    {
       "name": "necropolis2",
-	    "directions": 4
+      "directions": 4
     },
-	  {
+    {
       "name": "necropolis3",
-	    "directions": 4
+      "directions": 4
     },
-	  {
+    {
       "name": "necropolis4",
-	    "directions": 4
+      "directions": 4
     },
-	  {
+    {
       "name": "necropolis5",
-	    "directions": 4
+      "directions": 4
     },
-	  {
+    {
       "name": "necropolis6",
-	    "directions": 4
+      "directions": 4
     },
-	  {
+    {
       "name": "necropolis7",
-	    "directions": 4
+      "directions": 4
     }
   ]
 }
