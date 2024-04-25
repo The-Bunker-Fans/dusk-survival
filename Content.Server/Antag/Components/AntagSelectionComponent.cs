@@ -161,6 +161,12 @@ public partial struct AntagSelectionDefinition()
     /// </remarks>
     [DataField]
     public EntProtoId? SpawnerPrototype;
+
+    /// <summary>
+    /// <see cref="AntagPoolGrouping"/> to use when picking antags.
+    /// </summary>
+    [DataField]
+    public AntagPoolGrouping Grouping = AntagPoolGrouping.Ungrouped;
 }
 
 /// <summary>
@@ -186,4 +192,16 @@ public partial struct BriefingData
     /// </summary>
     [DataField]
     public SoundSpecifier? Sound;
+}
+
+/// <summary>
+/// Determines how antags are picked from the pool.
+/// For <c>Ungrouped</c>, the antags are picked from all valid players, in order of preference.
+/// For <c>Departments</c> a single antag is picked from every department's valid players.
+/// </summary>
+[Serializable]
+public enum AntagPoolGrouping: byte
+{
+    Ungrouped,
+    Departments
 }

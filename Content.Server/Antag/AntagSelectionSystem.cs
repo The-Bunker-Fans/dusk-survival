@@ -31,6 +31,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
 {
     [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IServerPreferencesManager _pref = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly GhostRoleSystem _ghostRole = default!;
@@ -202,13 +203,62 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         var playerPool = GetPlayerPool(ent, pool, def);
         var count = GetTargetAntagCount(ent, playerPool, def);
 
+        if (def.Grouping == AntagPoolGrouping.Departments)
+            ChooseDepartmentAntags(ent, playerPool, count, def);
+        else
+            ChooseUngroupedAntags(ent, playerPool, count, def);
+    }
+
+    private void ChooseUngroupedAntags(Entity<AntagSelectionComponent> ent, AntagSelectionPlayerPool pool, int count, AntagSelectionDefinition def)
+    {
         for (var i = 0; i < count; i++)
         {
             var session = (ICommonSession?) null;
             if (def.PickPlayer)
             {
-                if (!playerPool.TryPickAndTake(RobustRandom, out session))
+                if (!pool.TryPickAndTake(RobustRandom, out session))
                     break;
+
+                if (ent.Comp.SelectedSessions.Contains(session))
+                    continue;
+            }
+
+            MakeAntag(ent, session, def);
+        }
+    }
+
+    private void ChooseDepartmentAntags(Entity<AntagSelectionComponent> ent, AntagSelectionPlayerPool pool, int count, AntagSelectionDefinition def)
+    {
+        // first sort the pool into departments
+        var departments = new Dictionary<string, List<ICommonSession>>();
+        // only care about primary list here, could be improved in the future
+        foreach (var session in pool.PrimaryList)
+        {
+            if (!_mind.TryGetMind(session, out var mindId, out var mind))
+                continue;
+
+            if (!_jobs.MindTryGetJob(mindId, out _, out var job)
+                || !_jobs.TryGetPrimaryDepartment(job.ID, out var department))
+                continue;
+
+            if (departments.TryGetValue(department.ID, out var list))
+                list.Add(session);
+            else
+                departments[department.ID] = new() { session };
+        }
+
+        // then pick a random antag from each department
+        for (var i = 0; i < count; i++)
+        {
+            var session = (ICommonSession?) null;
+            if (def.PickPlayer)
+            {
+                if (departments.Keys.Count == 0)
+                    break;
+
+                var department = _random.Pick(departments.Keys);
+                session = _random.Pick(departments[department]);
+                departments.Remove(department);
 
                 if (ent.Comp.SelectedSessions.Contains(session))
                     continue;
