@@ -12,8 +12,12 @@ namespace Content.Server.Atmos.EntitySystems
         {
             DebugTools.Assert(!excitedGroup.Disposed, "Excited group is disposed!");
             DebugTools.Assert(tile.ExcitedGroup == null, "Tried to add a tile to an excited group when it's already in another one!");
-            excitedGroup.Tiles.Add(tile);
-            tile.ExcitedGroup = excitedGroup;
+            // Tiles should only be excited if they're desirable to be equalized immediately, i.e. TransferRatio == 1.0
+            if (tile.TransferRatio == 1.0) {
+                excitedGroup.Tiles.Add(tile);
+                tile.ExcitedGroup = excitedGroup;
+            }
+
             ExcitedGroupResetCooldowns(excitedGroup);
         }
 
